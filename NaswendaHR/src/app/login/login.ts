@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Header } from '../header/header';
 import { Footer } from '../footer/footer';
+import { ApiCalls } from '../services/api-calls';
 
 @Component({
   selector: 'app-login',
@@ -8,6 +9,20 @@ import { Footer } from '../footer/footer';
   templateUrl: './login.html',
   styleUrl: './login.scss',
 })
-export class Login {
+export class Login implements OnInit {
+  empID: string = "";
+  password: string = ""
+
+  constructor(private api: ApiCalls) { }
+
+  async ngOnInit() {
+
+  }
+
+  async login(){
+    
+  }
+
+
 
 }

@@ -5,4 +5,7 @@ import { Injectable } from '@angular/core';
 })
 export class ApiCalls {
   
+  validatePassword(password: string, id: string){
+
+  }
 }
