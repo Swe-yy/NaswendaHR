@@ -1,0 +1,45 @@
+.raleway-policies {
+  font-family: "Raleway", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 17;
+  font-style: normal;
+}
+
+
+.body{
+    position: fixed;
+    width:100%;
+    bottom: 0;
+    background-color: #277178db;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+}
+
+a{
+    color: black;
+    text-decoration: none;
+}
+
+.policies{
+    display: flex;
+    flex-direction: row;
+    width: 40%;
+    justify-content: space-evenly;
+}
+
+.privacy, .cookie{
+    color:#1f4d52;
+    font-family: Raleway;
+}
+
+.copy{
+    color:#9bdfe6db;
+    font-family: Raleway;
+}
+
+.policies, .copyright{
+    height:2.5rem;
+}
