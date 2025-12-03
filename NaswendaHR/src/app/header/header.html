@@ -1,7 +1,29 @@
 <div class="body">
     <div class="logo">
         <img src="https://naswenda.co.za/wp-content/uploads/2025/05/Naswenda1.svg" alt="Naswenda">
+    </div>
+    <div class="icon-box">
+        <div *ngIf="loginIcon() == true" id="login-icon" class="icon">
+            <img src="login_icon.svg" alt="login">
+            <p>LOGIN</p>
+        </div>
+        <div *ngIf="logoutIcon() == true" id="logout-icon" class="icon">
+            <img src="logout_icon.svg" alt="logout">
+            <p>LOGOUT</p>
+        </div>
+        <div *ngIf="regIcon() == true" id="reg-icon" class="icon">
+            <img src="reg_icon.svg" alt="logout">
+            <p>Register</p>
+        </div>
 
-        <!-- add icons to show for other pages (if statements)-->
+        <div *ngIf="leavePageIcon() == true" id="leave-icon" class="icon">
+            <img src="leave_icon.svg" alt="logout">
+            <p>VIEW LEAVE</p>
+        </div>
+
+        <div *ngIf="dashIcon() == true" id="dash-icon" class="icon">
+            <img src="dash_icon.svg" alt="logout">
+            <p>DASHBOARD</p>
+        </div>
     </div>
 </div>
