@@ -1,9 +1,17 @@
-<app-header 
-    [loginIcon]="false"
-    [logoutIcon]="true"
-    [regIcon]="false"
-    [leavePageIcon]="false"
-    [dashIcon]="true"
-></app-header>
+<app-header [loginIcon]="false" [logoutIcon]="true" [regIcon]="false" [leavePageIcon]="false"
+    [dashIcon]="true"></app-header>
+
+<body>
+    <div class="calendar">
+        <app-calendar></app-calendar>
+    </div>
+    <div class="line"></div>
+    <div class="crud-box">
+        <div id="create" class="crud"></div>
+        <div id="read" class="crud"></div>
+        <div id="update" class="crud"></div>
+        <div id="delete" class="crud"></div>
+    </div>
+</body>
 
 <app-footer></app-footer>

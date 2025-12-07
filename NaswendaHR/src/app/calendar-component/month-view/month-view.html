@@ -1,0 +1,35 @@
+<div class="month-container">
+    <div class="day" *ngFor="let day of days()" (click)="selectDate(day)">
+        <div *ngIf="checkEvent(day) >= 1; else noEvents">
+            <h3> {{ day | date : "EEEE, dd" }}</h3>
+        </div>
+
+        <div class="crud">
+            <button class="add-event-btn" (click)="addEvent(day)">+</button>
+        </div>
+
+        <ng-template #noEvents>
+            <div>
+                <div>
+                    <h3>
+                        {{ day | date : "EEEE, dd" }}
+                    </h3>
+                </div>
+                <div>
+                    <div class="crud">
+                        <button class="add-event-btn" (click)="addEvent(day)">+</button>
+                    </div>
+                </div>
+            </div>
+        </ng-template>
+    </div>
+    <app-pagination [totalItems]="31"></app-pagination>
+</div>
+
+<!-- Events -->
+<div class="events-container"> <!-- if a date has been selected-->
+    <h3>
+        Events for {{ selectedDate | date : "EEEE, MMMM dd, yyyy" }}
+        <!-- <app-event-list [events]="events[selectedDate.toISOString().split('T')[0]] || []"></app-event-list> -->
+    </h3>
+</div>
