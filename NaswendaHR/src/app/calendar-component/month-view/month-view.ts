@@ -7,17 +7,19 @@ import { Pagination } from '../pagination/pagination';
 @Component({
   selector: 'app-month-view',
   standalone: true,
-  imports: [EventList, CommonModule],
+  imports: [EventList, CommonModule, Pagination],
   templateUrl: './month-view.html',
   styleUrl: './month-view.scss',
 })
 export class MonthView implements OnInit {
-  date = input.required<Date>();
+  date = input<Date>(new Date());
   events: { [key: string]: string[] } = {};
   selectedDate: Date | null = null;
- 
-  constructor(private event: Events) {}
+  numDays = new Date(this.date().getFullYear(), this.date().getMonth() + 1, 0).getDate();
+  constructor(private event: Events) { }
 
+  currentPage = 1;
+  itemsPerPage = 7;
 
   days = computed(() => {
     const d = this.date();
@@ -32,6 +34,13 @@ export class MonthView implements OnInit {
     }
     return array;
   })
+
+  get paginatedDays() {
+    const start = (this.currentPage - 1)* this.itemsPerPage
+    const end = start + this.itemsPerPage;
+
+    return this.days().slice(start,end);
+  }
 
   ngOnInit(): void {
 
@@ -62,9 +71,14 @@ export class MonthView implements OnInit {
     this.event.removeEvent(dateString, event);
     this.loadEvents();
   }
+
   checkEvent(day: Date) {
     const dateString = day.toISOString().split('T')[0];
     const arr = this.event.getEvents(dateString);
     return arr.length;
+  }
+
+  changePage(page: number){
+    this.currentPage = page;
   }
 }

@@ -1,5 +1,5 @@
 <div class="month-container">
-    <div class="day" *ngFor="let day of days()" (click)="selectDate(day)">
+    <div class="day" *ngFor="let day of paginatedDays" (click)="selectDate(day)">
         <div *ngIf="checkEvent(day) >= 1; else noEvents">
             <h3> {{ day | date : "EEEE, dd" }}</h3>
         </div>
@@ -23,7 +23,13 @@
             </div>
         </ng-template>
     </div>
-    <app-pagination [totalItems]="31"></app-pagination>
+    <app-pagination 
+    [totalItems]="numDays" 
+    [itemsPerPage]="itemsPerPage"
+    [currentPage]="currentPage"
+    (onClick)="changePage($event)"
+
+     ></app-pagination>
 </div>
 
 <!-- Events -->
