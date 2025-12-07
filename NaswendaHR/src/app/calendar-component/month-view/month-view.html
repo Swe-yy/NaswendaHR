@@ -1,3 +1,4 @@
+
 <div class="month-container">
     <div class="day" *ngFor="let day of paginatedDays" (click)="selectDate(day)">
         <div *ngIf="checkEvent(day) >= 1; else noEvents">
@@ -30,12 +31,4 @@
     (onClick)="changePage($event)"
 
      ></app-pagination>
-</div>
-
-<!-- Events -->
-<div class="events-container"> <!-- if a date has been selected-->
-    <h3>
-        Events for {{ selectedDate | date : "EEEE, MMMM dd, yyyy" }}
-        <!-- <app-event-list [events]="events[selectedDate.toISOString().split('T')[0]] || []"></app-event-list> -->
-    </h3>
 </div>

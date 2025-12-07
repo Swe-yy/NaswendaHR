@@ -8,7 +8,7 @@ import { CommonModule } from '@angular/common';
   styleUrl: './event-list.scss',
 })
 export class EventList {
-  events!: string[];
+  events!: string[];  //fetch leave from api!!!!!
   remove = new EventEmitter<string>();
 
   onRemove(event: string){
