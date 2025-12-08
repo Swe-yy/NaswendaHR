@@ -1,6 +1,6 @@
 <div class="body">
     <div class="upcoming">
-        <h2>UPCOMING LEAVE</h2>
+        <h3 class="raleway-Bold">UPCOMING LEAVE</h3>
         <div class="dummy">
             <p class="title">[Title]</p>
             <p class="date">[Date]</p>
@@ -9,9 +9,12 @@
             <p class="title">{{l.title}}</p>
             <p class="date">{{l.date}}</p>
         </div>
+        <app-pagination [currentPage]="upcomingCurrentPage" class="pagination"
+            (onClick)="changeUpcomingPage($event)"></app-pagination>
     </div>
+
     <div class="pending">
-        <h2>PENDING LEAVE REQUESTS</h2>
+        <h3 class="raleway-Bold">PENDING LEAVE REQUESTS</h3>
         <div class="dummy">
             <p class="title">[Title]</p>
             <p class="date">[Date]</p>
@@ -20,11 +23,28 @@
             <p class="title">{{l.title}}</p>
             <p class="date">{{l.date}}</p>
         </div>
+        <app-pagination [currentPage]="pendingCurrentPage" class="pagination"
+            (onClick)="changePendingPage($event)"></app-pagination>
     </div>
+
     <div class="crud">
-        <h2>ACTIONS</h2>
+        <h3 class="raleway-Bold">ACTIONS</h3>
         <div id="create" class="crud-item">Request Leave</div>
         <div id="update" class="crud-item">Update Leave Request</div>
         <div id="delete" class="crud-item">Cancel Leave Request</div>
+    </div>
+    <div class="requests" *ngIf="manager() == true">
+         <h3 class="raleway-Bold">REQUESTS</h3> 
+        <div class="dummy">
+            <p class="title">[Title]</p>
+            <p class="requestee">[Requestee]</p>
+            <p class="date">[Date]</p>
+        </div>
+        <div class="request" *ngFor="let l of pendingLeave">
+            <p class="title">{{l.title}}</p>
+            <p class="date">{{l.date}}</p>
+        </div>
+        <app-pagination [currentPage]="pendingCurrentPage" class="pagination"
+            (onClick)="changePendingPage($event)"></app-pagination>
     </div>
 </div>

@@ -8,9 +8,9 @@ import { CommonModule } from '@angular/common';
   styleUrl: './pagination.scss',
 })
 export class Pagination implements OnInit {
-  itemsPerPage = input<number>(7);
+  itemsPerPage = input<number>(5);
   currentPage = input<number>(1);
-  totalItems = input<number>(0);
+  totalItems = input<number>(10);
   pages = 0;
   pageList:number[] = [];
   onClick = output<number>()
@@ -29,6 +29,7 @@ export class Pagination implements OnInit {
   }
 
   pageClicked(page: number){
+    if(page > 0 && page <= this.pages)
     this.onClick.emit(page);
   }
 }

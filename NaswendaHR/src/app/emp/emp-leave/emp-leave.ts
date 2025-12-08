@@ -10,5 +10,5 @@ import { Leave } from '../../leave/leave';
   styleUrl: './emp-leave.scss',
 })
 export class EmpLeave {
-
+ 
 }
