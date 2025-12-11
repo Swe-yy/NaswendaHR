@@ -12,6 +12,7 @@ import { ApiCalls } from '../services/api-calls';
 export class Login implements OnInit {
   empID: string = "";
   password: string = ""
+  empType: string | null = localStorage.getItem('empType');
 
   constructor(private api: ApiCalls) { }
 
@@ -19,8 +20,8 @@ export class Login implements OnInit {
 
   }
 
-  async login(){
-    
+  async login() {
+    //set employee type on login
   }
 
 

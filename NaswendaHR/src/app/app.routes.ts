@@ -4,6 +4,7 @@ import { EmpDashboard } from './emp/emp-dashboard/emp-dashboard';
 import { EmpLeave } from './emp/emp-leave/emp-leave';
 import { ManageDashboard } from './manager/manage-dashboard/manage-dashboard';
 import { ManageLeave } from './manager/manage-leave/manage-leave';
+import { ViewLeave } from './crud/view-leave/view-leave';
 
 export const routes: Routes = [
     {
@@ -25,5 +26,9 @@ export const routes: Routes = [
     {
         path: 'manLeave',
         component: ManageLeave
+    },
+    {
+        path: 'viewLeave',
+        component: ViewLeave
     }
 ];

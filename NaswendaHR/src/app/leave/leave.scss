@@ -90,3 +90,20 @@ h3 {
     margin-top: auto;
     width: 40%;
 }
+
+.delete-check {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    width: 70%;
+    height: 70%;
+    z-index: 9999;
+    background-color: #148491;
+    color: white;
+    justify-content: center;
+    align-items: center;
+}
+
+.delete-check .dummy{
+    color:  #0a5159;
+}
