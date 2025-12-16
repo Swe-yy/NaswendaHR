@@ -23,37 +23,3 @@ create table if not exists 'naswendaHR'.'Next_of_Kin'();
 create table if not exists 'naswendaHR'.'Bank_Details'();
 
 create table if not exists 'naswendaHR'.'Worker'();
-
-create table if not exists 'naswendaHR'.''();
-
-create table if not exists 'naswendaHR'.''();
-
-create table if not exists 'naswendaHR'.''();
-
-create table if not exists 'naswendaHR'.''();
-
-create table if not exists 'naswendaHR'.''();
-
-create table if not exists 'naswendaHR'.''();
-
-create table if not exists 'naswendaHR'.''();
-
-create table if not exists 'naswendaHR'.''();
-
-create table if not exists 'naswendaHR'.''();
-
-create table if not exists 'naswendaHR'.''();
-
-create table if not exists 'naswendaHR'.''();
-
-create table if not exists 'naswendaHR'.''();
-
-create table if not exists 'naswendaHR'.''();
-
-create table if not exists 'naswendaHR'.''();
-
-create table if not exists 'naswendaHR'.''();
-
-create table if not exists 'naswendaHR'.''();
-
-create table if not exists 'naswendaHR'.''();
