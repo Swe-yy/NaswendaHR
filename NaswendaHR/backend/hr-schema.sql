@@ -7,7 +7,7 @@ create schema if not exists `naswendaHR` default character set latin1;
 use `naswendaHR`;
 
 create table if not exists `naswendaHR`.`Personal_Details`(
-    `ID` varchar(13) PRIMARY KEY NOT NULL,
+    `ID` varchar(13) PRIMARY KEY not null,
     `emp_num` char(8) not null,
     `first_name` varchar(15) not null,
     `last_name` varchar(20) not null,
@@ -23,10 +23,21 @@ create table if not exists `naswendaHR`.`Personal_Details`(
     `nationality` varchar(15) not null,
     `highest_qualifications` enum('HighSchool',"Bachelor's",'Diploma','Honours','Masters','PhD', 'Doctorate') not null,
     `email` varchar(40) not null,
-);
+
+    Constraint `fk_personal_worker`
+        foreign key (`emp_num`)
+        references `naswendaHR`.`Worker`(`emp_num`)
+        on delete no action
+        on update no action
+)
+Engine = InnoDB
+Default Character Set = utf8;
 
 create table if not exists `naswendaHR`.`Passport`(
-    `passport_num` char(8)
+    `passport_num` char(8) primary key not null,
+    `country_of_issue` varchar(30) not null,
+    `date_issued` date not null,
+    `date_expiring` date not null
 );
 
 create table if not exists `naswendaHR`.`Work_Permit`(
@@ -34,7 +45,15 @@ create table if not exists `naswendaHR`.`Work_Permit`(
     `emp_num` char(8) not null,
     `date_issued` date not null,
     `date_expiring` date not null,
-);
+
+   Constraint `fk_permit_worker`
+        foreign key (`emp_num`)
+        references `naswendaHR`.`Worker`(`emp_num`)
+        on delete no action
+        on update no action
+)
+Engine = InnoDB
+Default Character Set = utf8;
 
 create table if not exists `naswendaHR`.`Qualifications`(
     `Qualification` varchar(40) not null,
@@ -53,7 +72,15 @@ create table if not exists `naswendaHR`.`Leave_Request`(
     `emp`char(8) not null,
     `start_date` date not null,
     `end_date` date not null,
-);
+
+Constraint `fk_leave_worker`
+        foreign key (`emp`)
+        references `naswendaHR`.`Worker`(`emp_num`)
+        on delete no action
+        on update no action
+)
+Engine = InnoDB
+Default Character Set = utf8;
 
 create table if not exists `naswendaHR`.`Memebership`(
     `society_id` primary key auto_increment not null,
@@ -67,12 +94,33 @@ create table if not exists `naswendaHR`.`Next_of_Kin`(
     `first_name` varchar(20) not null,
     `last_name` varchar(30) not null,
     `relation` enum('guardian','sibling','aunt','uncle','cousin','child','spouse') not null,
-    `address`,  --FINISH THISS
+    `street` varchar(30) not null,
+    `city` varchar(30) not null,
+    `postcode` int(4) not null,
 
     Primary Key(`first_name`,`last_name`),
 
+    Constraint `fk_kin_street`
+        foreign key (`street`)
+        references `naswendaHR`.`Address`(`street`)
+        on delete no action
+        on update no action
 
-);
+     Constraint `fk_kin_city`
+        foreign key (`city`)
+        references `naswendaHR`.`Address`(`city`)
+        on delete no action
+        on update no action
+
+     Constraint `fk_kin_postcode`
+        foreign key (`postcode`)
+        references `naswendaHR`.`Address`(`postcode`)
+        on delete no action
+        on update no action
+)
+    Engine = InnoDB
+    Default Character Set = utf8;
+
 
 create table if not exists `naswendaHR`.`Bank_Details`(
     `acc_num` int Primary Key not null,
@@ -155,6 +203,17 @@ create table if not exists `naswendaHR`.`Worker_Kin`(
 
 
 create table if not exists `naswendaHR`.`Phone_num`(
-    `ID` 
+    `ID` varchar(13) not null,
+    `phone_num` char(10) not null,
+
+    Primary Key (`ID`,`phone_num`)
 );
-create table if not exists `naswendaHR`.`Kin_Addr`();
+
+
+create table if not exists `naswendaHR`.`Kin_Addr`(
+    `street` varchar(30) not null,
+    `city` varchar(30) not null,
+    `postcode` int(4) not null,
+    `first_name` varchar(20) not null,
+    `last_name` varchar(30) not null,
+);
