@@ -13,6 +13,8 @@ class API{
     }
 
     private function __construct(){
+        echo "Construct\n";
+        echo __DIR__."\n";
         $this->con = require __DIR__."/config.php";
     }
 
@@ -26,3 +28,4 @@ $api = API::instance();
 $request = $_SERVER["REQUEST_METHOD"];
 $json = file_get_contents("php://input");
 $obj = json_decode($json, true);
+

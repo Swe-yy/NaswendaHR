@@ -1,16 +1,19 @@
 <?php
 
-require_once dirname(__DIR__,4).'/vendor/autoload.php';
+require_once __DIR__ . '/vendor/autoload.php';
 
-$host = getenv("DB_HOST");
-$db = getenv("DB");
-$user = getenv("USER");
-$password = getenv("PASSWORD");
+$host = 'db';
+$db = getenv('DB');
+$user = getenv('USER');
+$password = getenv('PASSWORD');
 
-try{
-    $conn = new PDO("mysql: host=$host, dbname=$db, $user,$password");
-    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+try {
+
+    echo "HELLOOOOOOOOO\n";
+    $conn = new PDO("mysql:host={$host};port=3307;dbname={$db};charset=utf8", $user, $password);
+    echo "okkk\n";
+   $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     return $conn;
-}catch(PDOException $err){
-    echo "Connection failed: ". $err->getMessage();
+} catch (PDOException $err) {
+    echo "Connection failed: " . $err->getMessage();
 }
