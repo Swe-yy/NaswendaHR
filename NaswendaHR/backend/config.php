@@ -3,14 +3,13 @@
 require_once __DIR__ . '/vendor/autoload.php';
 
 $host = 'db';
-$db = getenv('DB');
-$user = getenv('USER');
-$password = getenv('PASSWORD');
+$db = 'naswendaHR';
+$user = 'root';
+$password = 'password1';
 
 try {
 
-    echo "HELLOOOOOOOOO\n";
-    $conn = new PDO("mysql:host={$host};port=3307;dbname={$db};charset=utf8", $user, $password);
+    $conn = new PDO("mysql:host=db;dbname=naswendaHR;charset=utf8", "root", "password1");
     echo "okkk\n";
    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     return $conn;
