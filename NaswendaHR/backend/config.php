@@ -11,9 +11,8 @@ $user =$_ENV['USER'];
 $password = $_ENV['PASSWORD'];
 
 try {
-
-     $conn = new PDO("mysql:host=$host;dbname=$db;charset=utf8", $user, $password);
-    echo "okkk\n";
+    $conn = new PDO("mysql:host=$host;dbname=$db;charset=utf8", $user, $password);
+  
    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     return $conn;
 } catch (PDOException $err) {
