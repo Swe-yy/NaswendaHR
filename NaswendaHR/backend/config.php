@@ -2,14 +2,17 @@
 
 require_once __DIR__ . '/vendor/autoload.php';
 
-$host = 'db';
-$db = 'naswendaHR';
-$user =' root';
-$password = 'password1';
+$dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
+$dotenv->load();
+
+$host = $_ENV['DB_HOST'];
+$db = $_ENV['DB'];
+$user =$_ENV['USER'];
+$password = $_ENV['PASSWORD'];
 
 try {
 
-     $conn = new PDO("mysql:host=db;dbname=naswendaHR;charset=utf8", "root", "password1");
+     $conn = new PDO("mysql:host=$host;dbname=$db;charset=utf8", $user, $password);
     echo "okkk\n";
    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     return $conn;
