@@ -6,6 +6,18 @@ Drop schema if exists `naswendaHR`;
 create schema if not exists `naswendaHR` default character set latin1;
 use `naswendaHR`;
 
+
+create table if not exists `naswendaHR`.`Worker`(
+    `emp_num` char(8) primary key not null,
+    `department` varchar(30) not null,
+    `position` varchar(20) not null,
+    `supervisor` char(8) not null,
+    `responsibilities` varchar(50) not null
+)
+Engine = InnoDB
+Default Character Set = utf8mb4;
+
+
 create table if not exists `naswendaHR`.`Personal_Details`(
     `ID` varchar(13) PRIMARY KEY not null,
     `emp_num` char(8) not null,
@@ -96,6 +108,22 @@ create table if not exists `naswendaHR`.`Membership`(
 Engine = InnoDB
 Default Character Set = utf8mb4;
 
+create table if not exists `naswendaHR`.`Address`(
+    `street` varchar(30) not null,
+    `city` varchar(30) not null,
+    `postcode` int(4) not null,
+    `po_box` varchar(100) not null,
+    `private_bag` varchar(100) not null,
+    `province`varchar(100) not null,
+    `suburb` varchar(100) not null,
+    `type` enum('Postal','Residential','Permanent'),
+
+    Primary Key (`street`,`city`,`postcode`)
+)
+Engine = InnoDB
+Default Character Set = utf8mb4;
+
+
 create table if not exists `naswendaHR`.`Next_of_Kin`(
     `first_name` varchar(20) not null,
     `last_name` varchar(30) not null,
@@ -134,33 +162,6 @@ create table if not exists `naswendaHR`.`Bank_Details`(
 Engine = InnoDB
 Default Character Set = utf8mb4;
 
-create table if not exists `naswendaHR`.`Worker`(
-    `emp_num` char(8) primary key not null,
-    `department` varchar(30) not null,
-    `position` varchar(20) not null,
-    `supervisor` char(8) not null,
-    `responsibilities` varchar(50) not null
-)
-Engine = InnoDB
-Default Character Set = utf8mb4;
-
-
-
-
-create table if not exists `naswendaHR`.`Address`(
-    `street` varchar(30) not null,
-    `city` varchar(30) not null,
-    `postcode` int(4) not null,
-    `po_box` varchar(100) not null,
-    `private_bag` varchar(100) not null,
-    `province`varchar(100) not null,
-    `suburb` varchar(100) not null,
-    `type` enum('Postal','Residential','Permanent'),
-
-    Primary Key (`street`,`city`,`postcode`)
-)
-Engine = InnoDB
-Default Character Set = utf8mb4;
 
 
 create table if not exists `naswendaHR`.`Worker_Addr`(
