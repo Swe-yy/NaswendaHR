@@ -33,8 +33,11 @@ create table if not exists `naswendaHR`.`Personal_Details`(
     `gender` enum('Male','Female','Non-Binary','Other') not null,
     `start_date` date not null,
     `nationality` varchar(15) not null,
-    `highest_qualifications` enum('HighSchool',"Bachelor's",'Diploma','Honours','Masters','PhD', 'Doctorate') not null,
+    `highest_qualification` enum('HighSchool',"Bachelor's",'Diploma','Honours','Masters','PhD', 'Doctorate') not null,
     `email` varchar(40) not null,
+    `password` varchar(40) not null,
+    `salt` varchar(12) not null,
+    `apikey` varchar(32) not null,
 
     Constraint `fk_personal_worker`
         foreign key (`emp_num`)
@@ -88,6 +91,8 @@ create table if not exists `naswendaHR`.`Leave_Request`(
     `emp`char(8) not null,
     `start_date` date not null,
     `end_date` date not null,
+    `status` enum('submitted', 'under review', 'approved','denied','cancelled'),
+    `comment` varchar(50),
 
 Constraint `fk_leave_worker`
         foreign key (`emp`)
