@@ -46,7 +46,7 @@ services:
     volumes:
       - db:/var/lib/mariadb
       - ../../database/hr-schema.sql:/docker-entrypoint-initdb.d/hr-schema.sql
-
+   
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
     container_name: hr_phpmyadmin
