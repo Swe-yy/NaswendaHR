@@ -1,2 +1,2 @@
-# Naswenda
-Leave Management System
+# NaswendaHR
+initial HR management systems 
