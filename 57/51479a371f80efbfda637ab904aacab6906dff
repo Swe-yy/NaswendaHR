@@ -1,0 +1,46 @@
+frontend/package.json
+  h_94c952a9e14c58 10-13,32
+  h_94c952a9e14c58 25,33
+backend/package.json
+  h_94c952a9e14c58 7-9
+backend/vitest.config.ts
+  h_94c952a9e14c58 1-8
+package.json
+  h_94c952a9e14c58 1-25
+frontend/vite.config.ts
+  h_94c952a9e14c58 2,6-17
+backend/tsconfig.json
+  h_94c952a9e14c58 3,5,20-21
+  h_94c952a9e14c58 19
+frontend/coverage/App.tsx.html
+  h_94c952a9e14c58 1-103
+frontend/coverage/base.css
+  h_94c952a9e14c58 1-224
+frontend/coverage/block-navigation.js
+  h_94c952a9e14c58 1-87
+frontend/coverage/index.html
+  h_94c952a9e14c58 1-131
+frontend/coverage/main.tsx.html
+  h_94c952a9e14c58 1-112
+frontend/coverage/prettify.css
+  h_94c952a9e14c58 1
+frontend/coverage/prettify.js
+  h_94c952a9e14c58 1-2
+frontend/coverage/sorter.js
+  h_94c952a9e14c58 1-210
+frontend/node_modules/.package-lock.json
+  h_94c952a9e14c58 472-481,583-599,607-631,962-1099,1140-1149,1255-1264,1336-1342,1541-1550,1561-1570,1692-1701,1739-1745,1796-1834,1957-1977,2004-2054,2115-2128,2199-2205,2390-2396,2407-2450,2468-2477,2668-2757,2774-2790
+frontend/package-lock.json
+  h_94c952a9e14c58 20,27-28,530-539,927-933,945-962,1293-1430,1471-1480,1586-1595,1667-1673,1872-1881,1892-1901,2038-2047,2085-2091,2142-2180,2539-2589,2650-2663,2734-2740,2925-2931,2942-2985,3003-3012,3211-3300,3317-3333
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "5751479a371f80efbfda637ab904aacab6906dff",
+  "prompts": {},
+  "humans": {
+    "h_94c952a9e14c58": {
+      "author": "Swe-yy <u24584585@tuks.co.za>"
+    }
+  }
+}
