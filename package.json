@@ -1,0 +1,27 @@
+{
+  "name": "naswendahr",
+  "version": "1.0.0",
+  "description": "initial HR management systems",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test:frontend:unit": "npm --prefix frontend run test:unit",
+    "test:frontend:integration": "npm --prefix frontend run test:integration",
+     "test:backend:unit": "npm --prefix backend run test:unit",
+    "test:backend:integration": "npm --prefix backend run test:integration"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Swe-yy/NaswendaHR.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Swe-yy/NaswendaHR/issues"
+  },
+  "homepage": "https://github.com/Swe-yy/NaswendaHR#readme"
+}
