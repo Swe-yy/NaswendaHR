@@ -43,7 +43,7 @@ jobs:
         postgres:
           image: postgres:15
           env:
-            POSTGRES_PASSWORD: ${{secrets.POSTGRES_PASSWORD}}
+            POSTGRES_PASSWORD: ${{secrets.DB_PASSWORD}}
             POSTGRES_DB: test-db
             POSTGRES_USER: postgres
           ports: 
